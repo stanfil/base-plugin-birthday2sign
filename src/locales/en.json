@@ -1,0 +1,8 @@
+{
+  "title":"This plugin is used to batch convert birthdays (date fields) into zodiac signs.",
+  "sign":"Zodiac Sign",
+  "genSign":"Generate Zodiac Sign Field",
+  "selectTable":"Select Table",
+  "selectField":"Select Birthday Field",
+  "tips":"Tips: If the \"Zodiac Sign\" field does not exist, the plugin will automatically generate it."
+}
