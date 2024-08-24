@@ -1,5 +1,5 @@
 import './App.css';
-import { bitable, ITableMeta, IFieldMeta, Selection, FieldType, ITextField } from "@lark-base-open/js-sdk";
+import { bitable, ITableMeta, IFieldMeta, Selection, FieldType } from "@lark-base-open/js-sdk";
 import { Button, Form } from '@douyinfe/semi-ui';
 import { BaseFormApi } from '@douyinfe/semi-foundation/lib/es/form/interface';
 import { useState, useEffect, useRef, useCallback } from 'react';
@@ -61,7 +61,8 @@ export default function App() {
   const gen = useCallback(async () => {
 
     console.log(11111)
-    const table = await bitable.base.getActiveTable();
+    const selectedTable = formApi.current?.getValue('table')
+    const table = await bitable.base.getTableById(selectedTable);
     const fieldId = formApi.current?.getValue('field')
     const fieldMetaList = await table.getFieldMetaList()
     const xingzuoField = fieldMetaList?.filter(item => item.name === t('sign'))?.[0]
